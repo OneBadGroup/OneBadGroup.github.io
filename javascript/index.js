@@ -1,9 +1,9 @@
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1Kn8IWWkYaGBOdH4aspl4AbHWNMqQQVp0wnQ_nDmqFxg/edit#gid=0';
 
 // Load all hitters and format with DataTables.
-$('#raw-table').sheetrock({
+$('#data-table').sheetrock({
     url: mySpreadsheet,
-    query: "select B,C,F,N,S order by C asc",
+    query: "select B,C,F,N,S order by C desc",
   }).on('sheetrock:loaded', function () {
     $(this).DataTable({
         columns: [

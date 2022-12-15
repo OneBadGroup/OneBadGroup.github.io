@@ -1,28 +1,35 @@
 body {
     text-align: center;
-    background-color: #c5ddf0;
+    height: 100%;
+    background-image: url('http://clipart-library.com/img/2026927.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 div {
     margin-top: 15px;
+    margin-right: 100px;
+    margin-left: 100px;
     text-align: center;
 }
 
-.image-section {
-    display: flex;
-    justify-content: center;
+h1, h3, h4, p, td {
+    text-align: center;
 }
-
-.section-style {
-    margin-right: 25px;
-    margin-left: 25px;
+h1 span { 
+    background-color: white; 
+    font-size: 60px;
+}
+h3 span { 
     background-color: white;
+    font-size: 20px;
+}
+h4 span { 
+    background-color: white;
+    font-size: 20px;
 }
 
-h1 {
-    text-align: center;
-}
-
-p {
-    text-align: center;
+table, th, td {
+    border: 1px solid black;
 }
