@@ -2,7 +2,7 @@ body {
     text-align: center;
     height: 100%;
     background-color: rgb(99, 208, 255);
-    background-image: url('http://clipart-library.com/img/2026927.gif');
+    background-image: url('https://www.bareinternational.com/wp-content/uploads/2016/12/AdobeStock_127864317.jpeg');
     background-size: cover;
     background-position: center;
 }
@@ -18,18 +18,23 @@ h1, h3, h4, p, td {
     text-align: center;
 }
 h1 span { 
-    /* background-color: white;  */
+    background-color: whitesmoke;
     font-size: 60px;
 }
 h3 span { 
-    /* background-color: white; */
+    background-color: whitesmoke;
     font-size: 20px;
 }
 h4 span { 
-    /* background-color: white; */
+    background-color: whitesmoke;
     font-size: 20px;
 }
 
 table, th, td {
     border: 1px solid black;
 }
+
+table.dataTable thead tr {
+    background-color: green;
+    color: white;
+  }
