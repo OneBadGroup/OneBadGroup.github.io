@@ -2,15 +2,13 @@ body {
     text-align: center;
     height: 100%;
     background-image: url('http://clipart-library.com/img/2026927.gif');
-    background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
 }
 
 div {
     margin-top: 15px;
-    margin-right: 100px;
-    margin-left: 100px;
+    margin-right: 7%;
+    margin-left: 7%;
     text-align: center;
 }
 
