@@ -1,0 +1,28 @@
+body {
+    text-align: center;
+    background-color: #c5ddf0;
+}
+
+div {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.image-section {
+    display: flex;
+    justify-content: center;
+}
+
+.section-style {
+    margin-right: 25px;
+    margin-left: 25px;
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
