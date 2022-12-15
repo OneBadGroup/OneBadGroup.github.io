@@ -2,8 +2,11 @@ body {
     text-align: center;
     height: 100%;
     background-color: rgb(99, 208, 255);
-    /* background-image: url('http://clipart-library.com/img/2026927.gif'); */
-    /* background-size: cover; */
+    background-image: url('http://clipart-library.com/img/2026927.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 div {
