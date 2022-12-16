@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900);
+
 body {
     text-align: center;
     height: 100%;
@@ -18,15 +20,13 @@ h1, h3, h4, p, td {
     text-align: center;
 }
 h1 span { 
-    background-color: whitesmoke;
     font-size: 60px;
+    font-weight: 800;
 }
 h3 span { 
-    background-color: whitesmoke;
     font-size: 20px;
 }
 h4 span { 
-    background-color: whitesmoke;
     font-size: 20px;
 }
 
@@ -37,4 +37,36 @@ table, th, td {
 table.dataTable thead tr {
     background-color: green;
     color: white;
-  }
+}
+
+h1, p, a{
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato';
+}
+
+.header {
+  width: 100%;
+  padding:10px 0;
+  text-align: center;
+  background: green;
+  color: white;
+}
+
+
+.btn-bgstroke {
+  font-size: 20px;
+  display: inline-block;
+  border: 1px solid white;
+  background: red;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-bgstroke:hover {
+  background-color: white;
+  color: red;
+}
