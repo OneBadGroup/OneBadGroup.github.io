@@ -18,6 +18,7 @@ div {
 
 h1, h3, h4, p, td {
     text-align: center;
+    
 }
 h1 span { 
     font-size: 60px;
@@ -64,9 +65,11 @@ h1, p, a{
   border-radius: 10px;
   cursor: pointer;
   font-weight: 600;
+  text-align: center;
 }
 
 .btn-bgstroke:hover {
   background-color: white;
   color: red;
 }
+
