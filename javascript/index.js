@@ -2,7 +2,7 @@ var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1Kn8IWWkYaGBOdH4aspl
 
 var table = $("#data-table").sheetrock({
     url: mySpreadsheet,
-    query: "select B,C,F,N,S order by C desc",
+    query: "select B,C,D,G,O,T order by C desc",
     target: document.getElementById("data-table")
 })
 
@@ -16,6 +16,7 @@ table.on('sheetrock:loaded', function () {
             }
         },
         {"title":"Item Number"},
+        {"title":"Quantity"},
         {"title":"Asking Price"},
         {"title":"Item Name"},
         {
