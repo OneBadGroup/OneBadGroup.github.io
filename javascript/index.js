@@ -1,10 +1,12 @@
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1Kn8IWWkYaGBOdH4aspl4AbHWNMqQQVp0wnQ_nDmqFxg/edit#gid=0';
 
-$("#data-table").sheetrock({
+var table = $("#data-table").sheetrock({
     url: mySpreadsheet,
     query: "select B,C,F,N,S order by C desc",
     target: document.getElementById("data-table")
-}).on('sheetrock:loaded', function () {
+})
+
+table.on('sheetrock:loaded', function () {
     $(this).DataTable({
         columns: [
         {
@@ -24,7 +26,13 @@ $("#data-table").sheetrock({
         },
         
         ],
-        "pageLength": 25,
+        "pageLength": 10,
         responsive: true
     });
 });
+
+table.on('page.dt', function() {
+    $('html, body').animate({
+      scrollTop: $(".dataTables_wrapper").offset().top
+    }, 'fast');
+  });

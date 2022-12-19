@@ -16,7 +16,7 @@ div {
     text-align: center;
 }
 
-h1, h3, h4, p, td {
+h1, h3, h4, p, td, tr {
     text-align: center;
     
 }
@@ -33,6 +33,11 @@ h4 span {
 
 table, th, td {
     border: 1px solid black;
+}
+
+tbody {
+    border: 1px solid black;
+    color: black;
 }
 
 table.dataTable thead tr {
