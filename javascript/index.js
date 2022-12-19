@@ -25,5 +25,6 @@ $("#data-table").sheetrock({
         
         ],
         "pageLength": 25,
+        responsive: true
     });
 });
