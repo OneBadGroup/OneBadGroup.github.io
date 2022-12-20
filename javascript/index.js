@@ -16,7 +16,7 @@ table.on('sheetrock:loaded', function () {
             }
         },
         {"title":"Item Number"},
-        {"title":"Quantity"},
+        {"title":"Quantity Available"},
         {"title":"Asking Price"},
         {"title":"Item Name"},
         {
