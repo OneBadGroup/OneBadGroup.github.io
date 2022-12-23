@@ -58,10 +58,19 @@ table.on('sheetrock:loaded', function () {
         pageLength: 10,
         responsive: true
     });
-    document.getElementById("data-table").style.width = "20%";
-    document.getElementById("data-table_wrapper").style.width = "30%";
-    var header = findFirstDescendant("data-table", "thead");
-    header.title = "hidden";
+    var tbl = document.getElementById("data-table");
+    console.log(document.documentElement);
+    if ("ontouchstart" in document.documentElement) {
+        tbl.toggleClass('cards');
+        tbl.style.width = "40%";
+        document.getElementById("data-table_wrapper").style.width = "100%";
+        var header = findFirstDescendant("data-table", "thead");
+        header.title = "hidden";
+    }
+    else {
+        tbl.style.width = "98%";
+        document.getElementById("data-table_wrapper").style.width = "100%";
+    }
 });
 
 table.on('page.dt', function() {
