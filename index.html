@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" http-equiv="Content-Type" content="charset=UTF-8, width=device-width, initial-scale=1, shrink-to-fit=yes">
+        <meta name="viewport" http-equiv="Content-Type" content="charset=UTF-8">
         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://unpkg.com/sheetrock/dist/sheetrock.min.js"></script>
@@ -36,7 +36,7 @@
             </button>
         </div>
         <div class="container">
-            <table id="data-table" class="table table-sm table-hover cards" cellspacing="0" style="width:30%"></table>
+            <table id="data-table" class="table table-sm table-hover cards table-bordered dt-responsive" cellspacing="0"></table>
         </div>
         <br/>
         <br/>
@@ -84,34 +84,25 @@
             };
             }
         })();
-        function toggleSize() {
-            document.getElementById("data-table").classList.toggleClass('cards');
-            var columnHeaders = $("#data-table thead");
-            if (columnHeaders.style.display === "none") {
-                columnHeaders.style.display = "block";
-                document.getElementById("data-table").style.width = "100%";
-                document.getElementById("data-table_wrapper").style.width = "100%";
-            } else {
-                columnHeaders.style.display = "none";
-                document.getElementById("data-table").style.width = "30%";
-                document.getElementById("data-table_wrapper").style.width = "50%";
-            }
-            
-        }
         $('#btToggleDisplay').on('click', function () {
             table.toggleClass('cards');
-            if(document.getElementById("data-table thead").style.display === "none") {
-                document.getElementById("data-table thead").style.display = "block";
-                document.getElementById("data-table").style.width = "100%";
+            var header = findFirstDescendant("data-table", "thead");
+            if(header.title === "hidden") {
+                header.title = "visible";
+                document.getElementById("data-table").style.width = "98%";
                 document.getElementById("data-table_wrapper").style.width = "100%";
             } else {
-                document.getElementById("data-table thead") = "none";
-                document.getElementById("data-table").style.width = "30%";
-                document.getElementById("data-table_wrapper").style.width = "50%";
+                header.title = "hidden";
+                document.getElementById("data-table").style.width = "20%";
+                document.getElementById("data-table_wrapper").style.width = "30%";
             }
         })
         </script>
         <style>
+            .dataTables_wrapper {
+                margin-left:auto; 
+                margin-right:auto;
+            }
             .dataTables_length {
                 color: white!important;
                 font-weight: 800;
@@ -162,17 +153,23 @@
             .cards tbody tr {
                 float: left;
                 width: 19rem;
-                margin: 0.5rem;
+                margin: 0.125rem;
                 border: 0.0625rem solid rgba(0,0,0,.125);
                 border-radius: .25rem;
                 box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,0.25);
             }
+
             .cards tbody td {
                 display: block;
             }
+
             .cards thead {
                 display: none;
                 visibility:hidden;
+            }
+
+            .table thead {
+                visibility:visible;
             }
             
             .cards td:before {

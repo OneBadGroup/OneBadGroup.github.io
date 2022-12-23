@@ -1,5 +1,13 @@
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1Kn8IWWkYaGBOdH4aspl4AbHWNMqQQVp0wnQ_nDmqFxg/edit#gid=738902544';
 
+function findFirstDescendant(parent, tagname) {
+    parent = document.getElementById(parent);
+    var descendants = parent.getElementsByTagName(tagname);
+    if ( descendants.length )
+        return descendants[0];
+    return null;
+}
+
 var table = $("#data-table").sheetrock({
     url: mySpreadsheet,
     query: "select B,C,D,G,O,T order by C desc",
@@ -50,6 +58,10 @@ table.on('sheetrock:loaded', function () {
         pageLength: 10,
         responsive: true
     });
+    document.getElementById("data-table").style.width = "20%";
+    document.getElementById("data-table_wrapper").style.width = "30%";
+    var header = findFirstDescendant("data-table", "thead");
+    header.title = "hidden";
 });
 
 table.on('page.dt', function() {
