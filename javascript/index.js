@@ -46,6 +46,7 @@ table.on('sheetrock:loaded', function () {
         },
         ],
         pageLength: 10,
+        responsive: true
     });
 });
 
@@ -57,11 +58,12 @@ table.on('page.dt', function() {
 
 
 $('#btToggleDisplay').on('click', function () {
-    $("#data-table").toggleClass('cards');
+    table.toggleClass('cards');
     var columnHeaders = $("#data-table thead");
     if (columnHeaders.style.display === "none") {
         columnHeaders.style.display = "block";
     } else {
         columnHeaders.style.display = "none";
     }
+    $("#dataTables_wrapper").style.width = "500px";
 })

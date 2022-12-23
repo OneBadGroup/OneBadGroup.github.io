@@ -35,15 +35,20 @@ table, th, td {
     border: 1px solid black;
 }
 
+/* .dataTables_wrapper { 
+    width: 50%;
+    text-align: left;
+} */
+
 tbody {
     border: 1px solid black;
     color: black;
 }
 
-table.dataTable thead tr {
+/* table.dataTable thead tr {
     background-color: green;
     color: white;
-}
+} */
 
 h1, p, a{
   margin: 0;
