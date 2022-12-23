@@ -8,6 +8,7 @@ var table = $("#data-table").sheetrock({
 
 table.on('sheetrock:loaded', function () {
     $(this).DataTable({
+        select: "single",
         columns: [
         {
             "title":"Image",
@@ -43,11 +44,8 @@ table.on('sheetrock:loaded', function () {
                 return '<a href="' + data + '">More Info</a>';
             }
         },
-        
         ],
-        fixedHeader: false,
         pageLength: 10,
-        responsive: true
     });
 });
 
@@ -56,3 +54,14 @@ table.on('page.dt', function() {
       scrollTop: $(".dataTables_wrapper").offset().top
     }, 'fast');
   });
+
+
+$('#btToggleDisplay').on('click', function () {
+    $("#data-table").toggleClass('cards');
+    var columnHeaders = $("#data-table thead");
+    if (columnHeaders.style.display === "none") {
+        columnHeaders.style.display = "block";
+    } else {
+        columnHeaders.style.display = "none";
+    }
+})
