@@ -1,5 +1,21 @@
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1Kn8IWWkYaGBOdH4aspl4AbHWNMqQQVp0wnQ_nDmqFxg/edit#gid=738902544';
 
+function detectMobile() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+    
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+    });
+}
+
 function findFirstDescendant(parent, tagname) {
     parent = document.getElementById(parent);
     var descendants = parent.getElementsByTagName(tagname);
@@ -59,9 +75,8 @@ table.on('sheetrock:loaded', function () {
         responsive: true
     });
     var tbl = document.getElementById("data-table");
-    console.log(document.documentElement);
-    if ("ontouchstart" in document.documentElement) {
-        tbl.toggleClass('cards');
+    if(detectMobile()) {
+        tbl.classList.add('cards');
         tbl.style.width = "40%";
         document.getElementById("data-table_wrapper").style.width = "100%";
         var header = findFirstDescendant("data-table", "thead");
