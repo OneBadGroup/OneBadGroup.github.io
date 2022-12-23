@@ -25,6 +25,8 @@ table.on('sheetrock:loaded', function () {
         {
             "title":"Quantity Available",
             "render": function (data, type, row, meta) {
+                if(data == "" || data == null || data == undefined)
+                    data = 1;
                 if(data < 2)
                     return '<p style="color:red;"><b>' + data + " Remaining</b></p>";
                 else
@@ -55,15 +57,3 @@ table.on('page.dt', function() {
       scrollTop: $(".dataTables_wrapper").offset().top
     }, 'fast');
   });
-
-
-$('#btToggleDisplay').on('click', function () {
-    table.toggleClass('cards');
-    var columnHeaders = $("#data-table thead");
-    if (columnHeaders.style.display === "none") {
-        columnHeaders.style.display = "block";
-    } else {
-        columnHeaders.style.display = "none";
-    }
-    $("#dataTables_wrapper").style.width = "500px";
-})

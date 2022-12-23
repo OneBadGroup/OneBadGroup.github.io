@@ -29,14 +29,14 @@
             </h4>
         </section>
         <div class="col-2">
-            <button id="btToggleDisplay" onclick="toggleSize()" class="btn btn-primary" title="Change Views">
+            <button id="btToggleDisplay" class="btn btn-primary" title="Change Views">
                 <i class="fa fa-table fa-lg" aria-hidden="true"></i> 
                 <i class="fa fa-arrows-h fa-lg" aria-hidden="true"></i> 
                 <i class="fa fa-id-card-o fa-lg" aria-hidden="true"></i>
             </button>
         </div>
         <div class="container">
-            <table id="data-table" class="table table-sm table-hover cards" cellspacing="0"></table>
+            <table id="data-table" class="table table-sm table-hover cards" cellspacing="0" style="width:30%"></table>
         </div>
         <br/>
         <br/>
@@ -85,8 +85,31 @@
             }
         })();
         function toggleSize() {
-            document.getElementById("data-table").style.width = "50%";
+            document.getElementById("data-table").classList.toggleClass('cards');
+            var columnHeaders = $("#data-table thead");
+            if (columnHeaders.style.display === "none") {
+                columnHeaders.style.display = "block";
+                document.getElementById("data-table").style.width = "100%";
+                document.getElementById("data-table_wrapper").style.width = "100%";
+            } else {
+                columnHeaders.style.display = "none";
+                document.getElementById("data-table").style.width = "30%";
+                document.getElementById("data-table_wrapper").style.width = "50%";
+            }
+            
         }
+        $('#btToggleDisplay').on('click', function () {
+            table.toggleClass('cards');
+            if(document.getElementById("data-table thead").style.display === "none") {
+                document.getElementById("data-table thead").style.display = "block";
+                document.getElementById("data-table").style.width = "100%";
+                document.getElementById("data-table_wrapper").style.width = "100%";
+            } else {
+                document.getElementById("data-table thead") = "none";
+                document.getElementById("data-table").style.width = "30%";
+                document.getElementById("data-table_wrapper").style.width = "50%";
+            }
+        })
         </script>
         <style>
             .dataTables_length {
@@ -131,9 +154,10 @@
                 background-color: white!important;
                 color: black!important;
             }
-/*             .dataTables_wrapper {
-                width: 21rem;
-            } */
+
+            tbody tr:hover {
+                background-color: whitesmoke!important;
+            }
 
             .cards tbody tr {
                 float: left;

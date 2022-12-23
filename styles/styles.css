@@ -35,20 +35,22 @@ table, th, td {
     border: 1px solid black;
 }
 
-/* .dataTables_wrapper { 
-    width: 50%;
-    text-align: left;
-} */
-
 tbody {
     border: 1px solid black;
     color: black;
 }
 
-/* table.dataTable thead tr {
+.table thead tr th {
     background-color: green;
     color: white;
-} */
+    text-align: center;
+    vertical-align: middle;
+} 
+
+.table tbody tr td {
+    text-align: center;
+    vertical-align: middle;
+} 
 
 h1, p, a{
   margin: 0;
