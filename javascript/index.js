@@ -49,7 +49,7 @@ table.on('sheetrock:loaded', function () {
         {
             "title":"Quantity Available",
             "render": function (data, type, row, meta) {
-                if(data == "" || data == null || data == undefined)
+                if(data == "" || data == null || data == undefined || data.includes("NAME"))
                     data = 1;
                 if(data < 2)
                     return '<p style="color:red;"><b>' + data + " Remaining</b></p>";
