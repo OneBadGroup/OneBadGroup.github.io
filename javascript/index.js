@@ -26,7 +26,7 @@ function findFirstDescendant(parent, tagname) {
 
 var table = $("#data-table").sheetrock({
     url: mySpreadsheet,
-    query: "select B,C,D,G,O,T order by C desc",
+    query: "select A,B,C,F,N,T order by B desc",
     target: document.getElementById("data-table")
 })
 
