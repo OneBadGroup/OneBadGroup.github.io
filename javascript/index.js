@@ -26,7 +26,7 @@ function findFirstDescendant(parent, tagname) {
 
 var table = $("#data-table").sheetrock({
     url: mySpreadsheet,
-    query: "select A,B,C,F,N,T order by B desc",
+    query: "select A,C,D,G,O,U order by C desc",
     target: document.getElementById("data-table")
 })
 
@@ -37,7 +37,23 @@ table.on('sheetrock:loaded', function () {
         {
             "title":"Image",
             "render": function (data, type, row, meta) {
-                return '<img src="' + data + '" width="200" height="200">';
+                // Split the data into an array using semicolon as the delimiter
+                var urls = data.split(';');
+            
+                // Check if there are two URLs in the array
+                if (urls.length === 2) {
+                    var url1 = urls[0].trim(); // First URL
+                    var url2 = urls[1].trim(); // Second URL
+            
+                    // Create clickable image link 
+                    var imageLink = '<a href="' + url1 + '" target="_blank"><img src="' + url2 + '" width="200" height="200"></a>';
+            
+                    // Return the HTML for the clickable image
+                    return imageLink;
+                } else {
+                    // Handle the case where there aren't exactly two URLs separated by a semicolon
+                    return 'Invalid data format';
+                }
             }
         },
         {
