@@ -39,21 +39,14 @@ table.on('sheetrock:loaded', function () {
             "render": function (data, type, row, meta) {
                 // Split the data into an array using semicolon as the delimiter
                 var urls = data.split(';');
-            
-                // Check if there are two URLs in the array
-                if (urls.length === 2) {
-                    var url1 = urls[0].trim(); // First URL
-                    var url2 = urls[1].trim(); // Second URL
-            
-                    // Create clickable image link 
-                    var imageLink = '<a href="' + url1 + '" target="_blank"><img src="' + url2 + '" width="200" height="200"></a>';
-            
-                    // Return the HTML for the clickable image
-                    return imageLink;
-                } else {
-                    // Handle the case where there aren't exactly two URLs separated by a semicolon
-                    return 'Invalid data format';
-                }
+                var url1 = urls[0].trim(); // Image URL
+                var url2 = urls[1].trim(); // Item URL
+        
+                // Create clickable image link 
+                var imageLink = '<a href="' + url2 + '" target="_blank"><img src="' + url1 + '" width="200" height="200"></a>';
+        
+                // Return the HTML for the clickable image
+                return imageLink;
             }
         },
         {
