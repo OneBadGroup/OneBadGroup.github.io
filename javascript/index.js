@@ -76,7 +76,7 @@ table.on('sheetrock:loaded', function () {
         {
             "title":"Additional Info", 
             "render": function (data, type, row, meta) {
-                return '<a href="' + data + '">More Info</a>';
+                return '<a href="' + data + '" target="_blank">More Info</a>';
             }
         },
         ],
