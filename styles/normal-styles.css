@@ -51,17 +51,17 @@ tbody {
 .table tbody tr td {
     text-align: center;
     vertical-align: middle;
-} 
+}
 
 /*below block of css for change style when not active*/
 .dataTables_wrapper .dataTables_paginate .paginate_button:not(.active) {
-    background: rgb(23, 155, 5)!important;
+    background: rgb(255, 149, 0)!important;
     color: white!important;
     font-weight: 800;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-    background: rgb(3, 238, 109)!important;
+    background: white!important;
     color: black!important;
 }
 
@@ -71,7 +71,7 @@ tbody {
 }
 
 .dataTables_wrapper.no-footer {
-    background-color: red!important;
+    background-color: rgb(43, 168, 240)!important;
     color: white!important;
 }
 
