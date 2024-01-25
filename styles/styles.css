@@ -4,8 +4,8 @@ body {
     text-align: center;
     height: 100%;
     background-color: white;
-    background-image: url('https://www.bareinternational.com/wp-content/uploads/2016/12/AdobeStock_127864317.jpeg');
-    background-size: contain;
+    background-image: url('https://adoption.microsoft.com/files/microsoft-teams/custom-backgrounds-gallery/community/nature/community-nature-Teams-background-123.jpg');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -42,7 +42,7 @@ tbody {
 }
 
 .table thead tr th {
-    background-color: green;
+    background-color: rgb(43, 168, 240);
     color: white;
     text-align: center;
     vertical-align: middle;
@@ -52,28 +52,6 @@ tbody {
     text-align: center;
     vertical-align: middle;
 } 
-
-/*below block of css for change style when not active*/
-.dataTables_wrapper .dataTables_paginate .paginate_button:not(.active) {
-    background: rgb(23, 155, 5)!important;
-    color: white!important;
-    font-weight: 800;
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-    background: rgb(3, 238, 109)!important;
-    color: black!important;
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button.current {
-    background-color: white!important;
-    color: black!important;
-}
-
-.dataTables_wrapper.no-footer {
-    background-color: red!important;
-    color: white!important;
-}
 
 h1, p, a{
   margin: 0;
@@ -85,7 +63,7 @@ h1, p, a{
   width: 100%;
   padding:10px 0;
   text-align: center;
-  background: green;
+  background: rgb(43, 168, 240);
   color: white;
 }
 
@@ -94,7 +72,7 @@ h1, p, a{
   font-size: 20px;
   display: inline-block;
   border: 1px solid white;
-  background: red;
+  background: rgb(255, 149, 0);
   color: white;
   padding: 10px 20px;
   border-radius: 10px;
@@ -105,5 +83,5 @@ h1, p, a{
 
 .btn-bgstroke:hover {
   background-color: white;
-  color: red;
+  color: rgb(255, 149, 0);
 }
